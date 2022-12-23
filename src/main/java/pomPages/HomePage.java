@@ -19,6 +19,7 @@ public class HomePage {
 	@FindBy(xpath="//a[.='Organizations']") private WebElement organizationsTab;
 	@FindBy(xpath="//img[@src='themes/softed/images/user.PNG']") private WebElement administratorIcon;
 	@FindBy(xpath="//a[.='Sign Out']") private WebElement signOutButton;
+	@FindBy(xpath="//a[.='Contacts']") private WebElement contactsTab;
 	
 	//Initialization
 	public HomePage(WebDriver driver) {
@@ -40,6 +41,13 @@ public class HomePage {
 	 */
 	public void clickOrganizations() {
 		organizationsTab.click();
+	}
+	
+	/**
+	 * This method is used to click on the contacts tab
+	 */
+	public void clickContacts() {
+		contactsTab.click();
 	}
 	
 	/**
