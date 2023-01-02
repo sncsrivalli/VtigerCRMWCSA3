@@ -138,7 +138,7 @@ public class WebDriverUtility {
 	 * @param javaUtility
 	 * @param classname
 	 */
-	public void getScreenshot(JavaUtility javaUtility, String classname) {
+	public void getScreenshot(JavaUtility javaUtility, WebDriver driver, String classname) {
 		String currentTime = javaUtility.currentTime();
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);

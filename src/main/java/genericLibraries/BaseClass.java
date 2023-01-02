@@ -39,6 +39,8 @@ public class BaseClass {
 	protected CreateNewLeadPage createLead;
 	protected NewLeadInfoPage newLeadInfo;
 	protected DuplicatingPage duplicating;
+	public static WebDriver sdriver;
+	public static JavaUtility sjavaUtil;
 
 	// @BeforeSuite
 	// @BeforeTest
@@ -48,7 +50,7 @@ public class BaseClass {
 		property = new PropertyFileUtility();
 		excel = new ExcelFileUtility();
 		javaUtil = new JavaUtility();
-
+		sjavaUtil = javaUtil;
 		property.propertyFileInitialization(IConstantPath.PROPERTY_FILE_PATH);
 		excel.excelInitialization(IConstantPath.EXCEL_FILE_PATH);
 
@@ -57,6 +59,7 @@ public class BaseClass {
 		long time = Long.parseLong(property.getDataFromProperties("timeouts"));
 
 		driver = web.openApplication(browser, url, time);
+		sdriver = driver;
 		login = new LoginPage(driver);
 		Assert.assertTrue(login.getPageHeader().contains("vtiger"));
 		
