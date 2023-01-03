@@ -30,7 +30,8 @@ public class ListenerImplementation implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getMethod().getMethodName()+" Fail");
-		new WebDriverUtility().getScreenshot(BaseClass.sjavaUtil, BaseClass.sdriver, result.getMethod().getMethodName());
+		//new WebDriverUtility().getScreenshot(BaseClass.sjavaUtil, BaseClass.sdriver, result.getMethod().getMethodName());
+		new WebDriverUtility().getScreenshot(BaseClass.sdriver);
 	}
 
 	@Override

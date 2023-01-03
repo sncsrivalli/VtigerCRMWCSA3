@@ -137,6 +137,7 @@ public class WebDriverUtility {
 	 * This method is used to capture the screenshot
 	 * @param javaUtility
 	 * @param classname
+	 * @return 
 	 */
 	public void getScreenshot(JavaUtility javaUtility, WebDriver driver, String classname) {
 		String currentTime = javaUtility.currentTime();
@@ -148,6 +149,13 @@ public class WebDriverUtility {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	public String getScreenshot(WebDriver driver) {
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		String src = ts.getScreenshotAs(OutputType.BASE64);
+		return src;
 	}
 
 	/**

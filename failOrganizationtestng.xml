@@ -6,8 +6,6 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testNGImplementation.CreateAndDuplicateLeadTest" />
-			<class name="testNGImplementation.CreateContactWithExistingOrganizationTest" />
 			<class name="testNGImplementation.CreateOrganizationTest" />
 		</classes>
 	</test> <!-- Test -->
