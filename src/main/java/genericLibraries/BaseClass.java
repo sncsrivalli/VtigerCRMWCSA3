@@ -58,7 +58,7 @@ public class BaseClass {
 		String browser = property.getDataFromProperties("browser");
 		long time = Long.parseLong(property.getDataFromProperties("timeouts"));
 
-		driver = web.openApplication(browser, url, time);
+		driver = web.openApplication(System.getProperty(browser), url, time);
 		sdriver = driver;
 		login = new LoginPage(driver);
 		Assert.assertTrue(login.getPageHeader().contains("vtiger"));
