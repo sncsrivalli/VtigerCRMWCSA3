@@ -138,8 +138,9 @@ public class WebDriverUtility {
 	 * @param javaUtility
 	 * @param classname
 	 * @return 
+	 * @return 
 	 */
-	public void getScreenshot(JavaUtility javaUtility, WebDriver driver, String classname) {
+	public String getScreenshot(JavaUtility javaUtility, WebDriver driver, String classname) {
 		String currentTime = javaUtility.currentTime();
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -149,7 +150,7 @@ public class WebDriverUtility {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		return dest.getAbsolutePath();
 	}
 	
 	public String getScreenshot(WebDriver driver) {
