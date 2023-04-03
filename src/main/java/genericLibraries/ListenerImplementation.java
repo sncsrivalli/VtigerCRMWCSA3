@@ -30,10 +30,10 @@ public class ListenerImplementation implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getMethod().getMethodName()+" Fail");
-		//String path = new WebDriverUtility().getScreenshot(BaseClass.sjavaUtil, BaseClass.sdriver, result.getMethod().getMethodName());
-		//test.addScreenCaptureFromPath(path);
-		String path1 = new WebDriverUtility().getScreenshot(BaseClass.sdriver);
-		test.addScreenCaptureFromBase64String(path1);
+		String path = new WebDriverUtility().getScreenshot(BaseClass.sjavaUtil, BaseClass.sdriver, result.getMethod().getMethodName());
+		test.addScreenCaptureFromPath(path);
+		//String path1 = new WebDriverUtility().getScreenshot(BaseClass.sdriver);
+		//test.addScreenCaptureFromBase64String(path1);
 	}
 
 	@Override
